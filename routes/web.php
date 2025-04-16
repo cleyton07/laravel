@@ -13,7 +13,11 @@ use App\Http\Middleware\LogAcessoMiddleware;
 |
 */
 
-Route::get('/', [App\Http\Controllers\Principal::class, 'principal']);
+Route::get('/', [App\Http\Controllers\Principal::class, 'view'])->name('view.princiapal');
+Route::get('/add-Personagem', [App\Http\Controllers\Personagem::class, 'view'])->name('view.add.personagem');
+Route::post('/add-Personagem', [App\Http\Controllers\Personagem::class, 'salvarPersonagem'])->name('view.add.personagem');
+
+Route::get('/listar-Personagem', [App\Http\Controllers\Personagem::class, 'ListarPersonagem'])->name('view.listar.personagem');
 
 
 
